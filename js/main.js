@@ -4,3 +4,5 @@
 import {createPhotos} from './data';
 
 createPhotos();
+
+//task7.2 is done too
