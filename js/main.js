@@ -1,8 +1,8 @@
 //Идея функции рандома взята с https://learn.javascript.ru/
 //В функциях random() и floor() разбирался на https://developer.mozilla.org/
 
-import {createPhotos} from './data';
+import {createPhotos} from './data.js';
+import {render} from './drawable.js';
 
-createPhotos();
-
-//task7.2 is done too
+const list = createPhotos();
+render(list);

@@ -1,18 +1,24 @@
-import {createPhotos} from './data';
 
-const template = document.querySelector('#picture').content;
-const photosContainerElement = document.querySelector('.photos_container');
-const photosFragment = document.createDocumentFragment();
 
-const photos = createPhotos();
+const template = document.querySelector('#picture').content.querySelector('.picture');
+const photosContainerElement = document.querySelector('.pictures');
 
-photos.forEach(({url, description, likes, comments}) => {
+const createElement = (url, description, likes, comments) => {
   const currentPhoto = template.cloneNode(true);
   currentPhoto.querySelector('.picture__img').src = url;
   currentPhoto.querySelector('.picture__img').alt = description;
-  currentPhoto.querySelector('.picture__info.picture__comments').textContent = comments;
-  currentPhoto.querySelector('.picture__info.picture__likes').textContent = likes;
-  photosFragment.appendChild(currentPhoto);
-});
+  currentPhoto.querySelector('.picture__comments').textContent = comments;
+  currentPhoto.querySelector('.picture__likes').textContent = likes;
+  return currentPhoto;
+};
 
-photosContainerElement.appendChild(photosFragment);
+export const render = (arr) => {
+  const photosFragment = document.createDocumentFragment();
+
+  arr.forEach(({url, description, likes, comments}) => {
+    const element = createElement(url, description, likes, comments);
+    photosFragment.appendChild(element);
+  });
+
+  photosContainerElement.appendChild(photosFragment);
+};
