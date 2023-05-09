@@ -1,10 +1,8 @@
 //data module
 
-import {customRandom} from './util';
+import {customRandom} from './util.js';
 
 const PHOTOS_AMOUNT = 25;
-
-const list = [];
 
 const newPhoto = (index) => ({
   id: index,
@@ -15,9 +13,11 @@ const newPhoto = (index) => ({
 });
 
 const createPhotos = () => {
-  for (let i = 0; i < PHOTOS_AMOUNT; i++) {
+  const list = [];
+  for (let i = 1; i <= PHOTOS_AMOUNT; i++) {
     list.push(newPhoto(i));
   }
+  return list;
 };
 
 export {createPhotos};
