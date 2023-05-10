@@ -1,4 +1,4 @@
-
+import { formInteraction } from './forms.js';
 
 const template = document.querySelector('#picture').content.querySelector('.picture');
 const photosContainerElement = document.querySelector('.pictures');
@@ -22,3 +22,5 @@ export const render = (arr) => {
 
   photosContainerElement.appendChild(photosFragment);
 };
+
+formInteraction();
