@@ -20,4 +20,13 @@ const createPhotos = () => {
   return list;
 };
 
-export {createPhotos};
+const effects = {
+  none: 'none',
+  chrome: 'grayscale(1)',
+  sepia: 'sepia(1)',
+  marvin: 'invert(100%)',
+  phobos: 'blur(3px)',
+  heat: 'brightness(3)',
+};
+
+export { createPhotos, effects };
