@@ -3,6 +3,8 @@
 import {customRandom} from './util.js';
 
 const PHOTOS_AMOUNT = 25;
+const MIN_COMMENT_SIZE = 20;
+const MAX_COMMENT_SIZE = 140;
 
 const newPhoto = (index) => ({
   id: index,
@@ -29,4 +31,4 @@ const effects = {
   heat: 'brightness(3)',
 };
 
-export { createPhotos, effects };
+export { createPhotos, MIN_COMMENT_SIZE, MAX_COMMENT_SIZE, effects };

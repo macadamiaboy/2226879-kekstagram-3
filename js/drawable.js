@@ -21,6 +21,6 @@ export const render = (arr) => {
   });
 
   photosContainerElement.appendChild(photosFragment);
+  formInteraction();
 };
 
-formInteraction();

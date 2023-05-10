@@ -20,7 +20,7 @@ const changeEffect = (evt) => {
 const removeEffect = () => {
   uploadPreview.classList.remove(currentEffect);
   uploadPreview.classList.add('effects__preview--none');
-  uploadPreview.style.filter = 'none';
+  uploadPreview.style.filter = '';
   currentEffect = 'effects__preview--none';
 };
 
