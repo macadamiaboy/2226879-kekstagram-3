@@ -1,6 +1,8 @@
 import { changeEffect, removeEffect } from './effects.js';
-import { increase, decrease } from './scale.js';
-import { validator } from './validation.js';
+import { increase, decrease, resetScale } from './scale.js';
+import { onSubmitForm } from './validation.js';
+import { showSuccessModal } from './upload-success.js';
+import { showErrorModal } from './upload-error.js';
 
 const uploadForm = document.querySelector('.img-upload__form');
 const uploadFile = document.querySelector('#upload-file');
@@ -15,6 +17,7 @@ const cleanForm = () => {
   hashtag.value = '';
   comment.value = '';
   removeEffect();
+  resetScale();
 };
 
 const btnEscape = (evt) => {
@@ -46,10 +49,11 @@ const formInteraction = () => {
   uploadFile.addEventListener('change', () => {
     openForm();
   });
+
+  increase();
+  decrease();
+  onSubmitForm(showSuccessModal, showErrorModal);
 };
 
-increase();
-decrease();
-validator();
 
-export { formInteraction };
+export { formInteraction, hideForm };
