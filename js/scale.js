@@ -31,8 +31,8 @@ const increase = () => {
 };
 
 const resetScale = () => {
-  scaleValue.value = `100%`;
-  uploadPreview.style = `transform: scale(1)`;
+  scaleValue.value = '100%';
+  uploadPreview.style = 'transform: scale(1)';
 };
 
 export { decrease, increase, resetScale };
